@@ -36,7 +36,7 @@ class SyftboxMetadata(ApplicationBase):
         """
         metadata_dir = self.public_dir(self.my_user_id) / "metadata"
         self.create_directory(metadata_dir)  # Ensure the directory exists
-        self.set_permissions(metadata_dir, [self.my_user_id], [self.my_user_id], [self.my_user_id])
+        self.set_permissions(metadata_dir, [self.my_user_id, "GLOBAL"], [self.my_user_id], [self.my_user_id])
         logger.info(f"Permissions set for {metadata_dir}")
 
     def create_metadata_file(self):
